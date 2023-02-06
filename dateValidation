@@ -1,0 +1,25 @@
+from datetime import datetime
+
+def ValidDate(test_str):
+  # initializing string
+
+  # printing original string
+  print("The date you inputted is : " + str(test_str))
+  # initializing format
+  format = "%d-%m-%Y"
+  # checking if format matches the date
+  res = True
+  # using try-except to check for truth value
+  try:
+    res = bool(datetime.strptime(test_str, format))
+    return res
+  except ValueError:
+    res = False
+    return res
+  # printing result
+  
+
+
+input_str = input('Date: ')
+dt1 = ValidDate(input_str)
+print(dt1)
